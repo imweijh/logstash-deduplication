@@ -22,7 +22,8 @@ Link do wpisu: https://wiadrodanych.pl/big-data/deduplikacja-zdarzen-logstash-re
   }
 
   if [cjexists] {
-    mutate { add_tag => [ "dedupe" ] }      # memcached 根据 fingerprint 如果查回来cjexists字段，则表面为重复记录，加tag，也可以直接drop{}
+    mutate { add_tag => [ "dedupe" ] }
+    # memcached 根据 fingerprint 如果查回来cjexists字段，则表面为重复记录，加tag，也可以直接drop{}
   } else {
     memcached {
       hosts => ["127.0.0.1:11211"]
