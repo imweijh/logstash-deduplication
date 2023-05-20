@@ -4,7 +4,8 @@ Link do wpisu: https://wiadrodanych.pl/big-data/deduplikacja-zdarzen-logstash-re
 
 本来想借鉴此方法，后面发现用logstash内置filter：fingerprint + memcached，可以实现去重功能
 
-'''
+```
+
   ### fingerprint 和 memcached 实现去重(dedupe)功能begin
   fingerprint {
     source => [ "cjdate", "gddm", "zqdm", "wtid", "cjid" ]
@@ -32,4 +33,5 @@ Link do wpisu: https://wiadrodanych.pl/big-data/deduplikacja-zdarzen-logstash-re
    }
   }
   ### fingerprint 和 memcached 实现去重(dedupe)功能end
-'''
+  
+```
